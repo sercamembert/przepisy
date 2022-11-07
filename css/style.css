@@ -149,27 +149,27 @@ margin-left: 6%;
 
 
 .info-grid{
-    width: 100%;
+    width: 90%;
     height:12%;
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
 }
 
 .info-grid-item{
     width: auto;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
     font-size: 1.2vw;
     color: whitesmoke;
 }
 
 .info-grid2{
-    width: 100%;
+    width: 85%;
     height:12%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
 
 }
 
