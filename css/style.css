@@ -1,0 +1,348 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Dm sans;
+  }
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: rgb(37, 36, 36);
+}
+
+
+/* header */
+.header{
+    margin-left: 15vw;
+    max-width: 65vw;
+    max-height: 10vh;
+    height: 9vh;
+    margin-top: 1%;
+}
+
+.grid-wrapper{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    
+
+}
+
+.grid-item{
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2vw;
+    color: whitesmoke;
+}
+
+.image{
+    max-width: 6vw;
+}
+
+.add{
+    background-color: #287101;
+    padding: 0.5vw;
+    border-radius: 5px;
+    border: 1px solid #287101;
+    color: whitesmoke;
+    font-size: 1vw;
+    transition: filter 0.4s ease-in-out;
+}
+
+.add:hover{
+    cursor: pointer;
+    filter: brightness(80%);
+}
+
+.recipes-img{
+    max-width: 1.5vw;
+    width: 1.5vw;
+
+}
+/* koniec headera */
+
+
+/* main kontent */
+
+
+
+.sec-1{
+margin-left: 6%;
+}
+
+.sec-1-container{
+    margin-top: 7vh;
+    max-width: 88vw;
+    min-height: 10vh;
+
+} 
+
+.grid-wrapper-sec-1{
+    max-width: 80vw;
+    min-height: 70vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4vw;
+    margin-top: 0.5%;
+}
+
+.item-big{
+    max-width: 100%;
+    height:70vh;
+}
+
+
+
+.przepis-dnia{
+    font-size: 2vw;
+    color: whitesmoke;
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 1%;
+}
+
+.main-recipe{
+    width: 41.667vw;
+    height: 55vh;
+    background-image: url(/img/lasagne.png);
+    background-size: 100%;
+    resize: both;
+    position: relative;
+    transition: filter 0.5s ease-in-out, background-size 0.4s ease-in-out;
+    background-position: center;
+}
+
+.main-recipe:hover{
+    filter: brightness(75%);
+    cursor: pointer;
+    background-size: 110%;
+}
+
+.main-recipe::after{
+    content: 'Sprawdź przepis';
+    background-color: #287101;
+    padding: 0.5vw;
+    border-radius: 5px;
+    border: 1px solid #287101;
+    color: whitesmoke;
+    font-size: 1vw;
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
+
+}
+
+
+
+.main-recipe:hover::after{
+    opacity: 1;
+    filter: brightness(110%);
+}
+
+
+.info-grid{
+    width: 100%;
+    height:12%;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+}
+
+.info-grid-item{
+    width: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2vw;
+    color: whitesmoke;
+}
+
+.info-grid2{
+    width: 100%;
+    height:12%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+
+}
+
+.dish-types{
+    width: 100%;
+    min-height: 8vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3vw;
+}
+.dishes{
+    font-size: 1.2vw;
+    height: 100%;
+    color: #287101;
+    text-align: center;
+    width: 8vw;
+    margin-top: 0.8%;
+
+}
+.dish-link{
+    text-decoration: none;
+    color: #287101;
+}
+
+.color-hover{
+    transition: color 0.35s ease-in-out;
+}
+
+.color-hover:hover{
+    color: #287101;
+    cursor: pointer;
+}
+/* koniec main kontentu */
+
+
+
+/* Sekcja-2 Dania główne */
+
+.sec-dish{
+    margin-left: 6%;
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1.4s;
+}
+.show{
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+    
+.sec-dish-container{
+    max-width: 88vw;
+    min-height: 100vh;
+    margin-bottom: 10%;
+    margin-top: 5%;   
+
+}
+
+.title-container{
+    max-width: 100%;
+    height: 8vh;
+    font-size: 3vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #287101;
+    font-weight: 700;
+
+}
+
+.arrow-container{
+    font-size: 2vw;
+    margin-left: 3%;
+}
+
+
+
+.arrow-up{
+    animation: move 1.8s infinite ease-in-out;
+}
+@keyframes move{
+    0%{transform: translateY(-10px);}
+    60%{transform: translateY(20px);}
+    100%{transform: translateY(-10px);}
+}
+
+
+.main-container-sec-dish{
+    max-width: 100%;
+    min-height: 75vh;
+    margin-top: 1%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    gap:1vw;
+}
+.item-grid-sec-dish{
+    text-align: center;
+    color: #287101;
+    font-size: 1.5rem;
+    justify-content: center;
+}
+
+
+.check-other-recipes{
+    max-width: 100%;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1%;
+}
+
+.main-recipe-2{
+    width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+    height: 333px;
+    background-size: 110%;
+    resize: both;
+    position: relative;
+    transition: filter 0.5s ease-in-out, background-size 0.4s ease-in-out;
+    background-position: center;
+    background-color: aliceblue;
+}
+
+.main-recipe-2:hover{
+    filter: brightness(75%);
+    cursor: pointer;
+    background-size: 120%;
+}
+
+.main-recipe-2::after{
+    content: 'Sprawdź przepis';
+    background-color: #287101;
+    padding: 0.5vw;
+    border-radius: 5px;
+    border: 1px solid #287101;
+    color: whitesmoke;
+    font-size: 1vw;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
+
+}
+
+
+
+.main-recipe-2:hover::after{
+    opacity: 1;
+    filter: brightness(110%);
+}
+
+
+
+
+/* Koniec sekcji-2 dań głównych */
+
+
+/* Sekcja-3 zupy */
+
+
+/* Koniec Sekcji-3 zup */
+
+/* media  */
+@media(prefers-reduced-motion){
+    .sec-dish {
+        transition: none;
+    }
+}
+/* media koniec */
