@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link href='https://fonts.googleapis.com/css?family=DM Sans' rel='stylesheet'>
 </head>
@@ -16,13 +16,14 @@
  <nav>
     <div class="header" id="header">
         <div class="grid-wrapper">
-            <div class="grid-item"><img src="img/logo.png" alt="logo" class="image"></div>
+            <div class="grid-item"><a href="index.html"> <img src="img/logo.png" alt="logo" class="image"></a></div>
             <div class="grid-item"><img src="img/recipe.png" alt="recipe" class="recipes-img"><span class="color-hover"> Przepisy</span></div>
-            <div class="grid-item"><span class="color-hover"><i class="fa-solid fa-circle-question"></i>&nbsp;O nas</span></div>
-            <div class="grid-item"><span class="color-hover"><i class="fa-solid fa-phone"></i>&nbsp;Kontakt</span></div>
+            <div class="grid-item"><a href="#section-about" style="text-decoration: none;color:whitesmoke"><span class="color-hover"><i class="fa-solid fa-circle-question"></i>&nbsp;O nas</span></a></div>
             <div class="grid-item"><span class="color-hover"><i class="fa-solid fa-magnifying-glass"></i>&nbsp;Szukaj</span></div>
             <div class="grid-item"><span class="color-hover"><i class="fa-solid fa-user"></i>&nbsp;Rejestracja</span></div>
             <div class="grid-item"><button class="add">Dodaj przepis +</button></div>
+            <div class="grid-item"></div>
+            <div class="grid-item"><a href="#section-about" style="text-decoration: none;color:whitesmoke"><i class="fa-regular fa-lightbulb light-size"></i></a></div>
         </div>
     </div>
  </nav> 
@@ -31,24 +32,22 @@
 <section class="sec-1">
     <div class="sec-1-container">
         <div class="grid-wrapper-sec-1">
-            <div class="item-big">
-                <h2 class="przepis-dnia">Przepis dnia:</h2>
-                <div class="main-recipe" style="background-image: url(img/lasagne.png);"></div>
+            <div class="info-grid-item item-title">Przepis dnia:</div>
+            <div class="info-grid-item item-title">Polecane artykuły:</div>
+            <div class="info-grid-item item-3">
                 <div class="info-grid">
-                    <div class="info-grid-item"><p style="font-size: 1.5vw;font-weight:700;" class="color-hover"> Lasagne bolognese</p></div>
-                    <div class="info-grid-item"><i class="fa-solid fa-clock"></i>&nbsp;60min</div>
-                    <div class="info-grid-item"><i class="fa-solid fa-face-smile"></i>&nbsp;Łatwe</div>
-                    <div class="info-grid-item"><i class="fa-solid fa-user"></i>&nbsp; dla 4 os.</div>
+                    <div class="info-grid-item-main-describe"><p style="font-size: 1.5vw;font-weight:700;"> Lasagne bolognese</p></div>
+                    <div class="info-grid-item-main-describe"><i class="fa-solid fa-clock"></i>&nbsp;60min</div>
+                    <div class="info-grid-item-main-describe"><i class="fa-solid fa-face-smile"></i>&nbsp;Łatwe</div>
+                    <div class="info-grid-item-main-describe"><i class="fa-solid fa-user"></i>&nbsp; dla 4 os.</div>
                 </div>
             </div>
-            <div class="item-big">            
-                <h2 class="przepis-dnia">Polecany przepis:</h2>
-                <div class="main-recipe" style="background-image: url(img/pierogi-dynia.png);"></div>
-                <div class="info-grid2">
-                    <div class="info-grid-item"><p style="font-size: 1.5vw;font-weight:700;" class="color-hover">Pierogi z dynią</p></div>
-                    <div class="info-grid-item"><i class="fa-solid fa-clock"></i>&nbsp;30min</div>
-                    <div class="info-grid-item"><i class="fa-solid fa-face-smile"></i>&nbsp;Łatwe</div>
-                    <div class="info-grid-item"><i class="fa-solid fa-user"></i>&nbsp; dla 3 os.</div>
+            <div class="info-grid-item item-4">
+                <div class="item-4-container">
+                    <div class="sec-main-item" style="background-image: url(img/4przepisy/pierogi-dynia.png);"><div class="sec-main-info">Pierogi z dynią</div></div>
+                    <div class="sec-main-item" style="background-image: url(img/4przepisy/ciasto-czekoladowe-ze-sliwkami.png)"><div class="sec-main-info">Ciasto czekoladowe</div></div>
+                    <div class="sec-main-item" style="background-image: url(img/4przepisy/kapusniak-z-boczkiem-i-kielbasa.png)"><div class="sec-main-info">Kapuśniak z kiełbasą</div></div>
+                    <div class="sec-main-item" style="background-image: url(img/4przepisy/cynamonowe-racuchy-ze-sliwka.png)"><div class="sec-main-info">Racuchy z jabłek</div></div>
                 </div>
             </div>
         </div>
@@ -299,17 +298,51 @@
         </div>
     </div>
 </section>
+<section class="sec-newsletter" id="section-newsletter">
+    <div class="newsletter-container">
+        <div class="newsletter-title">
+            <p><i class="fa-solid fa-envelope-open-text"></i>&nbsp;NEWSLETTER</p><br>
+            <span> Bądź na bierząco - otrzymuj powiadomienia o nowych przepisach</span>
+        </div>
+        <div class="newsletter-buttons">
+            <input type="text" name="name" id="news-name" class="news-input-1" placeholder="Wpisz imię..."">
+            <input type="text" name="email" id="news-email" class="news-input-2" placeholder="Wpisz adres e-mail...">
+            <button type="submit" class="newsletter-button" id="newsBtn"><span>Zapisz się</span></button>
+        </div>
+        <div class="newsletter-buttons" style="margin-top: 0;">
+            <span class="required" id="required1"></span>
+            <span class="required" id="required2"></span>
+            <span class="required" id="required3"></span>
+        </div>
+    </div>
+</section>
+<section class="about-site" id="section-about">
+    <div class="about-container">
+        <div class="about-title"> <img src="img/logo.png" alt="whisk-icon"> <a href="#header" style="text-decoration: none;color:whitesmoke"> <br>Nasz przepis - o nas</a></div>
+        <div class="about-info">
+            <p>
+                Gotowanie to nasza pasja ! Pasja, która łączy, sprawia ogromną radość, generuje mnóstwo pozytywnych doświadczeń – jedyna w swoim rodzaju.
+                Setki godzin spędzonych w kuchni to setki niezapomnianych chwil. Każdy przygotowywany posiłek to nowe wyzwanie – zawsze chcemy dążyć do idealnego smaku, ale także efektu wizualnego. 
+                Pasję tę postanowiliśmy przekuć w blog kulinarny. Przeważyła chęć podzielenia się naszymi doświadczeniami oraz potrzeba poznania waszych opinii. To pozwoli na jeszcze lepsze doprecyzowanie naszych sprawdzonych przepisów.
+                Zaznaczamy, że przedstawione na blogu przepisy nie są publikowane w celu przypisania im naszego osobistego autorstwa. Są to w znakomitej większości przepisy dobrze każdemu znanych potraw – nie wymyśliliśmy ich ! W większości przypadków skorzystaliśmy z wielu propozycji przygotowania potraw ogólnie dostępnych w książkach kucharskich, na blogach kulinarnych, trafiliśmy na nie w gazetach lub zostały nam podpowiedziane przez bliskich czy znajomych.
+                W efekcie powstał ten zbiór znanych, sprawdzonych i starannie wyselekcjonowanych przepisów.
+            </p>
+        </div>
+    </div>
+</section>
+<footer class="sec-footer" id="footer">
+    <div class="footer-container">
+        <div class="hr-container"><hr class="footer-line"></div>
+        <div class="footer-socials">
+            <div class="footer-item"><a href="https://www.facebook.com/" class="footer-link"><i class="fa-brands fa-square-facebook color-hover"></i></a></div>
+            <div class="footer-item"><a href="https://www.instagram.com/" class="footer-link"><i class="fa-brands fa-instagram color-hover"></i></a></div>
+            <div class="footer-item"><a href="https://pl.pinterest.com/" class="footer-link"><i class="fa-brands fa-square-pinterest color-hover"></i></a></div>
+            <div class="footer-item"><a href="https://www.tiktok.com/pl-PL/" class="footer-link"><i class="fa-brands fa-tiktok color-hover"></i></a></div>
+        </div>
+    </div>
+</footer>
 
-
-
-
-
-
-
-
-
-
-<script src="jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>
