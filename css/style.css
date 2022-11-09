@@ -17,19 +17,19 @@ body{
 /* header */
 .header{
     margin-left: 15vw;
-    max-width: 65vw;
+    max-width: 83vw;
     max-height: 10vh;
     height: 9vh;
     margin-top: 1%;
+    background-color: rgb(37, 36, 36);
+    z-index: 100;
 }
 
 .grid-wrapper{
     width: 100%;
     height: 100%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    
-
+    grid-template-columns: repeat(8, 0.5fr);
 }
 
 .grid-item{
@@ -66,66 +66,61 @@ body{
     width: 1.5vw;
 
 }
-/* koniec headera */
 
+.light-size{
+    font-size: 2.5rem;
+}
+
+.fa-lightbulb:hover{
+    color:yellow;
+}
+
+/* koniec headera */
 
 /* main kontent */
 
 
 
 .sec-1{
-margin-left: 6%;
+    margin-left: 6%;
+
 }
 
 .sec-1-container{
     margin-top: 7vh;
     max-width: 88vw;
     min-height: 10vh;
-
 } 
 
 .grid-wrapper-sec-1{
-    max-width: 80vw;
+    max-width: 87.5vw;
     min-height: 70vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4vw;
-    margin-top: 0.5%;
+    grid-template-rows: 0.4fr 5fr;
+    column-gap: 4vw;
+    row-gap: 0.4vw;
 }
 
-.item-big{
-    max-width: 100%;
-    height:70vh;
-}
-
-
-
-.przepis-dnia{
-    font-size: 2vw;
-    color: whitesmoke;
-    max-width: 100%;
-    text-align: center;
-    margin-bottom: 1%;
-}
-
-.main-recipe{
-    width: 41.667vw;
-    height: 55vh;
-    background-size: 100%;
+.item-3{
+    background-image: url(/img/lasagne.png);
+    background-size: 113%;
+    background-repeat: no-repeat;
     resize: both;
     position: relative;
     transition: filter 0.5s ease-in-out, background-size 0.4s ease-in-out;
     background-position: center;
+    position: relative;
 }
 
-.main-recipe:hover{
+.item-3:hover{
     filter: brightness(75%);
     cursor: pointer;
-    background-size: 110%;
+    background-size: 130%;
 }
-
-.main-recipe::after{
-    content: 'Sprawdź przepis';
+    
+.item-3::after{
+    content: 'Sprawdź przepis >>';
     background-color: #287101;
     padding: 0.5vw;
     border-radius: 5px;
@@ -133,29 +128,36 @@ margin-left: 6%;
     color: whitesmoke;
     font-size: 1vw;
     position: absolute;
-    bottom: 50px;
+    bottom: 70px;
     left: 50px;
     opacity: 0;
     transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
-
+    
 }
 
-
-
-.main-recipe:hover::after{
+.item-3:hover::after{
     opacity: 1;
     filter: brightness(110%);
 }
 
+.item-title{
+font-size: 2vw;
+color: whitesmoke;
+text-align: center;
+font-weight: 750;
+}
 
 .info-grid{
+    position: absolute;
     width: 90%;
     height:12%;
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr;
+    margin-left: 2%;
+    bottom: 1px;
 }
 
-.info-grid-item{
+.info-grid-item-main-describe{
     width: auto;
     height: 100%;
     display: flex;
@@ -165,12 +167,67 @@ margin-left: 6%;
     color: whitesmoke;
 }
 
-.info-grid2{
-    width: 85%;
-    height:12%;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+.item-4{
+    height: 100%;
+    color: whitesmoke;
+}
 
+.item-4-container{
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+}
+
+.sec-main-item{
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 110%;
+    resize: both;
+    position: relative;
+    transition: filter 0.5s ease-in-out, background-size 0.4s ease-in-out;
+    background-position: center;
+}
+
+.sec-main-item:hover{
+    filter: brightness(75%);
+    cursor: pointer;
+    background-size: 125%;
+}
+
+.sec-main-item::after{
+    content: 'Sprawdź przepis >>';
+    background-color: rgb(166, 53, 53);
+    padding: 0.4vw;
+    border-radius: 5px;
+    border: 1px solid #287101;
+    color: whitesmoke;
+    font-size: 1vw;
+    position: absolute;
+    bottom: 65px;
+    left: 30px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
+
+}
+
+.sec-main-item:hover::after{
+    opacity: 1;
+    filter: brightness(110%);
+}
+
+.sec-main-info{
+    position: absolute;
+    bottom: 12px;
+    left: 8px;
+    font-size: 1.8rem;
+    color: whitesmoke;
+    font-weight: 800;
+    background-color: #287101;
+    padding: 2px;
+    width: 90%;
 }
 
 .dish-types{
@@ -207,7 +264,7 @@ margin-left: 6%;
 
 
 
-/* Sekcja-2 Dania główne */
+/* Sekcje główne o daniach*/
 
 .sec-dish{
     margin-left: 6%;
@@ -215,6 +272,7 @@ margin-left: 6%;
     filter: blur(5px);
     transform: translateX(-100%);
     transition: all 1.4s;
+    width: 88vw;
 }
 .show{
     opacity: 1;
@@ -223,11 +281,9 @@ margin-left: 6%;
 }
     
 .sec-dish-container{
-    max-width: 88vw;
     min-height: 100vh;
     margin-bottom: 10%;
-    margin-top: 5%;   
-
+    margin-top: 5%;    
 }
 
 .title-container{
@@ -238,7 +294,7 @@ margin-left: 6%;
     align-items: center;
     justify-content: center;
     color: #287101;
-    font-weight: 700;
+    font-weight: 800;
 
 }
 
@@ -247,17 +303,15 @@ margin-left: 6%;
     margin-left: 3%;
 }
 
-
-
 .arrow-up{
     animation: move 1.8s infinite ease-in-out;
 }
+
 @keyframes move{
     0%{transform: translateY(-10px);}
     60%{transform: translateY(20px);}
     100%{transform: translateY(-10px);}
 }
-
 
 .main-container-sec-dish{
     max-width: 100%;
@@ -268,13 +322,13 @@ margin-left: 6%;
     grid-template-rows: repeat(3,1fr);
     gap:1vw;
 }
+
 .item-grid-sec-dish{
     text-align: center;
     color: #287101;
     font-size: 1.5rem;
     justify-content: center;
 }
-
 
 .check-other-recipes{
     max-width: 100%;
@@ -289,23 +343,23 @@ margin-left: 6%;
     width: 30rem;
     margin-left: auto;
     margin-right: auto;
-    height: 333px;
-    background-size: 110%;
+    background-repeat: no-repeat;
+    height: 320px;
+    background-size: 100%;
     resize: both;
     position: relative;
     transition: filter 0.5s ease-in-out, background-size 0.4s ease-in-out;
     background-position: center;
-    background-color: aliceblue;
 }
 
 .main-recipe-2:hover{
     filter: brightness(75%);
     cursor: pointer;
-    background-size: 120%;
+    background-size: 110%;
 }
 
 .main-recipe-2::after{
-    content: 'Sprawdź przepis';
+    content: 'Sprawdź przepis >>';
     background-color: #287101;
     padding: 0.5vw;
     border-radius: 5px;
@@ -320,23 +374,184 @@ margin-left: 6%;
 
 }
 
-
-
 .main-recipe-2:hover::after{
     opacity: 1;
     filter: brightness(110%);
 }
+/* Koniec sekcji głównych o daniach */
 
 
+/* Sekcja newsletter */
+.sec-newsletter{
+    margin-left: 6%;
+}
+
+.newsletter-container{
+    max-width: 88vw;
+    min-height: 20vh;
+    margin-bottom: 13%;
+    color: rgb(176, 176, 57);
+}
+
+.newsletter-title{
+    width: 100%;
+    text-align: center;
+}
+
+.newsletter-title > p{
+    font-size: 3rem;
+}
+
+.newsletter-title > span{
+    font-size: 1.5rem;
+}
+
+.newsletter-buttons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 2%;
+}
+
+.news-input-1{
+    width: 12rem;
+    padding: 10px;
+    border: 1px solid rgb(176, 176, 57);
+    font-size: 1rem;
+    font-family: Dm sans;
+}
+
+.news-input-2{
+    width: 20rem;
+    padding: 10px;
+    border: 1px solid rgb(176, 176, 57);
+    font-size: 1rem;
+    font-family: Dm sans;
+}
+
+.newsletter-button{
+    background-color: rgb(202, 202, 43);
+    padding: 10px;
+    border-radius: 5px;
+    color: whitesmoke;
+    font-size: 1vw;
+    transition: filter 0.4s ease-in-out;
+    text-align: center;
+    color: rgb(37, 36, 36);
+}
+.newsletter-button:hover{
+    cursor: pointer;
+    filter: brightness(60%);
+}
 
 
-/* Koniec sekcji-2 dań głównych */
+.newsletter-button > span{
+    font-size: 1vw;
+    color: rgb(37, 36, 36);
+}
+
+.required{
+    color: red;
+    font-size: 0.8rem;
+}
+
+#required1{
+    width: 12rem;
+}
+#required2{
+    width: 20rem;
+}
+#required3{
+    width: 6.8rem;
+}
+
+.opacity-show{
+    opacity:1;
+}
+
+.opacity-hide{
+    opacity:0;
+}
+
+/* Koniec sekcji newsletter */
 
 
-/* Sekcja-3 zupy */
+/* Sekcja o nas info */
+.about-site{
+    margin-left: 5%;
+}
+
+.about-container{
+    max-width: 86vw;
+    min-height: 30vh;
+    margin-bottom: 10%;
+    color: whitesmoke;
+    display: flex;
+    align-items: center;
+}
+
+.about-title{
+    width: 60%;
+    max-height: 20%;
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 800;
+}
+.about-title > img{
+    max-width: 14vw;
+}
+.about-info{
+    width: 73%;
+    font-size: 1.1rem;
+}
+/* Koniec sekcji o nas info */
 
 
-/* Koniec Sekcji-3 zup */
+/* Stopka - footer */
+
+.footer-container{
+    color: whitesmoke;
+    max-width: 100%;
+    min-height: 10vh;
+    margin-bottom: 0.5%;
+}
+
+.hr-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1%;
+}
+
+.footer-line{
+    border: 2px solid #287101;
+    width: 80%;
+}
+
+
+.footer-socials{
+    width: 100%;
+    min-height: 7vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.footer-item{
+    height: 100%;
+    font-size: 3.5rem;
+}
+
+.footer-link{
+    text-decoration: none;
+    color: whitesmoke;
+}
+
+
+/* Koniec stópki - footer */
 
 /* media  */
 @media(prefers-reduced-motion){
